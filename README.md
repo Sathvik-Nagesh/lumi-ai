@@ -1,25 +1,49 @@
-# Lumi AI - Dynamic Chat Interface
+# 🤖 Lumi AI
 
-A modern, fully customizable AI chat interface built with React, TypeScript, and Tailwind CSS. Inspired by ChatGPT, Gemini, and Claude with unique design elements and comprehensive theming support.
+A modern, intelligent AI assistant built with React and TypeScript, featuring real-time AI conversations, file uploads, and beautiful animated UI.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Sathvik-Nagesh/lumi-ai)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Sathvik-Nagesh/lumi-ai)
 
 ## ✨ Features
 
-- 🤖 **AI Integration** - Gemini API with DeepSeek fallback
-- 📎 **File Upload** - Real file handling and attachments  
-- 💬 **Chat Management** - Pin, archive, delete, export conversations
-- ⚙️ **Settings Panel** - Bulk operations and app configuration
-- 🎨 **Animated UI** - Beautiful glassmorphism effects with smooth animations
-- 🌓 **Theme Support** - Light/dark mode with system preference detection
-- 📱 **Responsive Design** - Works perfectly on all devices
-- 🔄 **Fallback System** - Always functional, even without API keys
-- **🎨 Dynamic Theming**: Complete customization via environment variables
-- **🤖 Multi-API Support**: Gemini API (primary) with DeepSeek fallback
-- **💬 Rich Chat Interface**: Modern UI with message history and search
-- **📱 Responsive Design**: Mobile-friendly with collapsible sidebar
-- **🌙 Dark/Light Mode**: System-aware theme switching
-- **📌 Chat Management**: Pin, search, and organize conversations
-- **⚡ Real-time Loading**: Beautiful animated loading states
-- **🎯 Accessibility**: Full keyboard navigation and screen reader support
+### 🤖 **AI Integration**
+- **Gemini 2.0 Flash API** - Latest Google AI model
+- **DeepSeek API Fallback** - Backup AI service
+- **Smart Fallback System** - Always works, even without API keys
+- **Real-time Responses** - Fast AI conversations
+
+### 📎 **File Management**
+- **Real File Upload** - Drag & drop or click to upload
+- **Multiple File Types** - Images, PDFs, documents, text files
+- **File Previews** - Visual file attachments
+- **File Removal** - Easy attachment management
+
+### 💬 **Chat Management**
+- **Pin Conversations** - Keep important chats at top
+- **Archive Chats** - Organize old conversations
+- **Delete Chats** - Individual or bulk deletion
+- **Export Chats** - Download conversations as JSON
+- **Search Chats** - Find conversations quickly
+
+### ⚙️ **Settings & Configuration**
+- **Settings Panel** - Comprehensive app configuration
+- **Bulk Operations** - Delete all chats, export all data
+- **App Information** - Version, API status, chat count
+- **Environment Controls** - Easy feature toggles
+
+### 🎨 **Beautiful UI**
+- **Animated Interface** - Glassmorphism effects with smooth animations
+- **Command Palette** - Quick actions with `/` commands
+- **Responsive Design** - Perfect on desktop, tablet, and mobile
+- **Theme Support** - Light/dark mode with system detection
+- **Loading States** - Beautiful animated feedback
+
+### 🔧 **Developer Features**
+- **TypeScript** - Full type safety
+- **Environment Variables** - Easy configuration
+- **Modular Architecture** - Clean, maintainable code
+- **Production Ready** - Optimized builds
 
 ## 🚀 Quick Start
 
@@ -29,8 +53,8 @@ A modern, fully customizable AI chat interface built with React, TypeScript, and
 
 ### Installation
 
-1. **Clone and install dependencies:**
 ```bash
+git clone https://github.com/Sathvik-Nagesh/lumi-ai.git
 cd lumi-ai
 npm install
 ```
@@ -42,13 +66,27 @@ cp .env.example .env
 
 3. **Add your API keys to `.env`:**
 ```env
+# Enable real AI responses
+VITE_USE_REAL_API=true
+
+# Add your API keys
 VITE_GEMINI_API_KEY=your_gemini_api_key_here
 VITE_DEEPSEEK_API_KEY=your_deepseek_api_key_here
+
+# Customize branding (optional)
+VITE_APP_NAME=Your AI Assistant
+VITE_APP_TAGLINE=Your Custom Tagline
 ```
 
 4. **Start development server:**
 ```bash
 npm run dev
+```
+
+5. **Build for production:**
+```bash
+npm run build
+npm run preview
 ```
 
 ## 🎛️ Configuration
@@ -138,13 +176,42 @@ npm run preview      # Preview production build
 npm run lint         # Run ESLint
 ```
 
-### Tech Stack
-- **Framework**: React 18+ with TypeScript
-- **Styling**: Tailwind CSS + shadcn/ui
-- **State Management**: React Context API
-- **Build Tool**: Vite
-- **API Integration**: Gemini API, DeepSeek API
-- **Icons**: Lucide React
+## 🚀 Deployment
+
+### Quick Deploy Options
+
+**Vercel (Recommended):**
+1. Go to [vercel.com](https://vercel.com)
+2. Import `Sathvik-Nagesh/lumi-ai`
+3. Add environment variables
+4. Deploy!
+
+**GitHub Pages:**
+1. Go to repository Settings → Pages
+2. Source: "GitHub Actions"
+3. Auto-deploys on push
+
+**Netlify:**
+1. Go to [netlify.com](https://netlify.com)
+2. "New site from Git"
+3. Build: `npm run build`, Publish: `dist`
+
+### Environment Variables for Production
+
+```env
+VITE_USE_REAL_API=true
+VITE_GEMINI_API_KEY=your_actual_api_key
+VITE_DEEPSEEK_API_KEY=your_actual_api_key
+```
+
+## 🏗️ Tech Stack
+
+- **Frontend:** React 19, TypeScript, Tailwind CSS
+- **Animations:** Framer Motion
+- **AI APIs:** Google Gemini 2.0 Flash, DeepSeek
+- **Build Tool:** Vite
+- **Icons:** Lucide React
+- **Deployment:** Vercel, Netlify, GitHub Pages
 
 ## 📦 Dependencies
 
@@ -161,34 +228,53 @@ npm run lint         # Run ESLint
 - `@radix-ui/react-slot` - Composition utilities
 - `clsx` & `tailwind-merge` - Conditional styling
 
-## 🚀 Deployment
+## 📚 Documentation
 
-The app is ready for deployment to any static hosting service:
+- **[Deployment Guide](./DEPLOYMENT.md)** - Complete deployment instructions
+- **[Gemini Setup](./GEMINI_SETUP.md)** - API key configuration guide
 
-```bash
-npm run build
-# Deploy the 'dist' folder to your hosting provider
-```
+## 🎯 Key Features Showcase
 
-## 🔒 Environment Variables
+### Command Palette
+Type `/` to access quick commands:
+- `/ask` - Ask AI about coding, design, or technology
+- `/code` - Generate React, TypeScript, or other code
+- `/ui` - Get help with UI/UX design and components
+- `/debug` - Help debug and fix code issues
 
-Create a `.env` file based on `.env.example` and configure:
+### Smart Fallback System
+1. **Primary:** Gemini 2.0 Flash API
+2. **Fallback:** DeepSeek API
+3. **Final:** Demo responses (always works)
 
-- **Required**: API keys for chosen AI services
-- **Optional**: All theming and feature toggles have sensible defaults
+### File Upload Support
+- **Images:** JPG, PNG, GIF, WebP, SVG
+- **Documents:** PDF, DOC, DOCX, TXT
+- **Data:** JSON, CSV
+- **Preview:** Automatic image previews
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT License - feel free to use this project for your own AI assistant!
+
+## 🙏 Acknowledgments
+
+- **Google AI** - For the Gemini API
+- **DeepSeek** - For the backup AI service
+- **Vercel** - For easy deployment
+- **Tailwind CSS** - For beautiful styling
+- **Framer Motion** - For smooth animations
 
 ---
 
-**Built with ❤️ using React, TypeScript, and Tailwind CSS**
+**Built with ❤️ by [Sathvik Nagesh](https://github.com/Sathvik-Nagesh)**
+
+**⭐ Star this repo if you find it useful!**
