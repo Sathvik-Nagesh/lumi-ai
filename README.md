@@ -4,6 +4,14 @@ A modern, fully customizable AI chat interface built with React, TypeScript, and
 
 ## ✨ Features
 
+- 🤖 **AI Integration** - Gemini API with DeepSeek fallback
+- 📎 **File Upload** - Real file handling and attachments  
+- 💬 **Chat Management** - Pin, archive, delete, export conversations
+- ⚙️ **Settings Panel** - Bulk operations and app configuration
+- 🎨 **Animated UI** - Beautiful glassmorphism effects with smooth animations
+- 🌓 **Theme Support** - Light/dark mode with system preference detection
+- 📱 **Responsive Design** - Works perfectly on all devices
+- 🔄 **Fallback System** - Always functional, even without API keys
 - **🎨 Dynamic Theming**: Complete customization via environment variables
 - **🤖 Multi-API Support**: Gemini API (primary) with DeepSeek fallback
 - **💬 Rich Chat Interface**: Modern UI with message history and search
