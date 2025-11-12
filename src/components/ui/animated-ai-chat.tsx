@@ -1,23 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useCallback, useTransition } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import {
-    ImageIcon,
-    FileUp,
-    Figma,
-    MonitorIcon,
-    CircleUserRound,
-    ArrowUpIcon,
-    Paperclip,
-    PlusIcon,
-    SendIcon,
-    XIcon,
-    LoaderIcon,
-    Sparkles,
-    Command,
-} from "lucide-react";
+    Sparkles, ImageIcon, MonitorIcon, Figma, Send as SendIcon, 
+    Paperclip, X as XIcon, LoaderIcon, Hash,
+} from 'lucide-react';
 import { motion, AnimatePresence } from "framer-motion";
 import * as React from "react"
 
@@ -149,11 +138,9 @@ interface AnimatedAIChatProps {
 export function AnimatedAIChat({ onSendMessage, messages = [] }: AnimatedAIChatProps) {
     const [value, setValue] = useState("");
     const [attachments, setAttachments] = useState<string[]>([]);
-    const [isTyping, setIsTyping] = useState(false);
-    const [isPending, startTransition] = useTransition();
+    const [isTyping] = useState(false);
     const [activeSuggestion, setActiveSuggestion] = useState<number>(-1);
     const [showCommandPalette, setShowCommandPalette] = useState(false);
-    const [recentCommand, setRecentCommand] = useState<string | null>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const { textareaRef, adjustHeight } = useAutoResizeTextarea({
         minHeight: 60,
@@ -255,8 +242,6 @@ export function AnimatedAIChat({ onSendMessage, messages = [] }: AnimatedAIChatP
                     setValue(selectedCommand.prefix + ' ');
                     setShowCommandPalette(false);
                     
-                    setRecentCommand(selectedCommand.label);
-                    setTimeout(() => setRecentCommand(null), 3500);
                 }
             } else if (e.key === 'Escape') {
                 e.preventDefault();
@@ -312,8 +297,6 @@ export function AnimatedAIChat({ onSendMessage, messages = [] }: AnimatedAIChatP
         setValue(selectedCommand.prefix + ' ');
         setShowCommandPalette(false);
         
-        setRecentCommand(selectedCommand.label);
-        setTimeout(() => setRecentCommand(null), 2000);
     };
 
     return (
@@ -557,7 +540,7 @@ export function AnimatedAIChat({ onSendMessage, messages = [] }: AnimatedAIChatP
                                         showCommandPalette && "bg-white/10 text-white/90"
                                     )}
                                 >
-                                    <Command className="w-4 h-4" />
+                                    <Hash className="w-4 h-4" />
                                     <motion.span
                                         className="absolute inset-0 bg-white/[0.05] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                                         layoutId="button-highlight"
